@@ -12,11 +12,12 @@ body {
 	height: 100%;
 }
 
-.ctrlBtns {
-	display: flex;
+.ctrlButtons {
+	/* display: flex;
 	justify-content: center;
 	align-items: center;
-	flex: 1;
+  flex: 1; */
+  margin: 10px 10px 20px 10px;
 }
 
 .gridContainer {
