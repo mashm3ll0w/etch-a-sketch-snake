@@ -20,3 +20,12 @@ function makeGrid(gridNumber) {
 }
 
 makeGrid(gridNumber);
+
+for (let x = 0; x < document.querySelectorAll(".divs").length; x++) {
+	document.querySelectorAll(".divs")[x].addEventListener("mouseover", function() {
+		this.style.backgroundColor = "blue";
+		// setTimeout(() => {
+		// 	this.style.backgroundColor = "";
+		// }, 500);
+	});
+}
