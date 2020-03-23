@@ -9,7 +9,7 @@ let gridNumber = 16;
 
 function defaultGame(gridNumber) {
 	// create the grid squares
-	container.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
+	container.style.gridTemplateColumns = `repeat(${gridNumber}, auto)`;
 	for (let i = 0; i < gridNumber * gridNumber; i++) {
 		const divs = document.createElement("div");
 		divs.classList.add("divs");
@@ -37,7 +37,7 @@ playSketch.addEventListener("click", function() {
 	container.innerHTML = "";
 	function sketchGame() {
 		gridNumber = parseInt(prompt("Enter gridSquares: "));
-		container.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
+		container.style.gridTemplateColumns = `repeat(${gridNumber}, auto)`;
 		for (let i = 0; i < gridNumber * gridNumber; i++) {
 			const divs = document.createElement("div");
 			divs.classList.add("divs");
@@ -66,7 +66,7 @@ playSnake.addEventListener("click", function() {
 	container.innerHTML = "";
 	function snakeGame() {
 		gridNumber = parseInt(prompt("Enter gridSquares: "));
-		container.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
+		container.style.gridTemplateColumns = `repeat(${gridNumber}, auto)`;
 		for (let i = 0; i < gridNumber * gridNumber; i++) {
 			const divs = document.createElement("div");
 			divs.classList.add("divs");
