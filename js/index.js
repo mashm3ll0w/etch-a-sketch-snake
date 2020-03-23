@@ -1,11 +1,14 @@
 // jshint esversion:6
 
 const container = document.querySelector(".gridContainer");
+const playSketch = document.querySelector("#sketch");
+const playSnake = document.querySelector("#snake");
 
-//create initial 16 by 16 grid
+// Default Game on page load
 let gridNumber = 16;
 
-function makeGrid(gridNumber) {
+function defaultGame(gridNumber) {
+	// create the grid squares
 	container.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
 	for (let i = 0; i < gridNumber * gridNumber; i++) {
 		const divs = document.createElement("div");
@@ -16,16 +19,13 @@ function makeGrid(gridNumber) {
 		divs.style.border = "1px solid black";
 		divs.style.borderRadius = "2px";
 		container.appendChild(divs);
+
+		//add the event listener
+		for (let x = 0; x < document.querySelectorAll(".divs").length; x++){
+			document.querySelectorAll(".divs")[x].addEventListener("mouseover", function(){
+				this.style.backgroundColor = "blue";
+			});
+		}
 	}
 }
-
-makeGrid(gridNumber);
-
-for (let x = 0; x < document.querySelectorAll(".divs").length; x++) {
-	document.querySelectorAll(".divs")[x].addEventListener("mouseover", function() {
-		this.style.backgroundColor = "blue";
-		// setTimeout(() => {
-		// 	this.style.backgroundColor = "";
-		// }, 500);
-	});
-}
+defaultGame(gridNumber);
