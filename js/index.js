@@ -49,12 +49,46 @@ playSketch.addEventListener("click", function() {
 			container.appendChild(divs);
 
 			// Add the event listener
-			for (let x = 0; x < document.querySelectorAll(".divs").length; x++){
-				document.querySelectorAll(".divs")[x].addEventListener("mouseover", function(){
+			for (let x = 0; x < document.querySelectorAll(".divs").length; x++) {
+				document.querySelectorAll(".divs")[x].addEventListener("mouseover", function() {
 					this.style.backgroundColor = "green";
 				});
 			}
 		}
 	}
 	sketchGame();
+});
+
+// Game 02 - Etch-a-Snake
+
+playSnake.addEventListener("click", function() {
+	gridNumber = "";
+	container.innerHTML = "";
+	function snakeGame() {
+		gridNumber = parseInt(prompt("Enter gridSquares: "));
+		container.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`;
+		for (let i = 0; i < gridNumber * gridNumber; i++) {
+			const divs = document.createElement("div");
+			divs.classList.add("divs");
+			divs.style.display = "flex";
+			divs.style.justifyContent = "center";
+			divs.style.alignItems = "center";
+			divs.style.border = "1px solid black";
+			divs.style.borderRadius = "2px";
+			container.appendChild(divs);
+
+			// add the event listener
+			for (let x = 0; x < document.querySelectorAll(".divs").length; x++) {
+				document.querySelectorAll(".divs")[x].addEventListener("mouseover", function() {
+					this.style.backgroundColor = "red";
+
+					// set timeout to simulate snake
+					setTimeout(() => {
+						this.style.backgroundColor = "";
+					}, 500);
+				});
+			}
+		}
+	}
+	snakeGame();
 });
